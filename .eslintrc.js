@@ -14,7 +14,7 @@ module.exports = {
 
   env: {
     browser: true,
-    es2021: true,
+    es2022: true,
     node: true,
     'vue/setup-compiler-macros': true
   },
@@ -31,12 +31,12 @@ module.exports = {
     // Uncomment any of the lines below to choose desired strictness,
     // but leave only one uncommented!
     // See https://eslint.vuejs.org/rules/#available-rules
-    'plugin:vue/vue3-essential', // Priority A: Essential (Error Prevention)
+    // 'plugin:vue/vue3-essential', // Priority A: Essential (Error Prevention)
     // 'plugin:vue/vue3-strongly-recommended', // Priority B: Strongly Recommended (Improving Readability)
-    // 'plugin:vue/vue3-recommended', // Priority C: Recommended (Minimizing Arbitrary Choices and Cognitive Overhead)
+    'plugin:vue/vue3-recommended', // Priority C: Recommended (Minimizing Arbitrary Choices and Cognitive Overhead)
 
     'standard'
-    
+
   ],
 
   plugins: [
@@ -46,7 +46,7 @@ module.exports = {
     // https://eslint.vuejs.org/user-guide/#why-doesn-t-it-work-on-vue-files
     // required to lint *.vue files
     'vue'
-    
+
   ],
 
   globals: {
@@ -64,7 +64,7 @@ module.exports = {
 
   // add your custom rules here
   rules: {
-    
+
     // allow async-await
     'generator-star-spacing': 'off',
     // allow paren-less arrow functions
@@ -81,13 +81,25 @@ module.exports = {
     'import/no-unresolved': 'off',
     'import/no-extraneous-dependencies': 'off',
 
+    'comma-dangle': ['error', 'always-multiline'],
+
+    "vue/component-tags-order": ["warn", {
+      "order": ["script", "template", "style"]
+    }],
+
     // The core 'import/named' rules
     // does not work with type definitions
     'import/named': 'off',
-    
+
+    'func-call-spacing': 'off',
+
     'prefer-promise-reject-errors': 'off',
 
     quotes: ['warn', 'single', { avoidEscape: true }],
+
+    'no-unused-expressions': 'off',
+
+    '@typescript-eslint/no-unused-vars': 'warn',
 
     // this rule, if on, would require explicit return type on the `render` function
     '@typescript-eslint/explicit-function-return-type': 'off',
@@ -100,6 +112,21 @@ module.exports = {
     'no-unused-vars': 'off',
 
     // allow debugger during development only
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
-  }
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+
+    "indent": "off",
+
+    // "@typescript-eslint/indent": ["error", 2]
+  },
+
+  overrides: [
+    {
+      files: ['**/*.cy.{js,ts}','**/*.spec.{js,ts}'],
+      extends: [
+        // Add Cypress-specific lint rules, globals and Cypress plugin
+        // See https://github.com/cypress-io/eslint-plugin-cypress#rules
+        'plugin:cypress/recommended',
+      ],
+    },
+  ],
 }
