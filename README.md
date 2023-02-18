@@ -1,6 +1,6 @@
-# Quasar App (quasar-base)
+# RR Quasar Base (updated-quasar-base)
 
-\u0017This f--ingg guy
+Quasar Base Project
 
 ## Install the dependencies
 ```bash

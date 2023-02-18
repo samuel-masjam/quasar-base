@@ -1,3 +1,7 @@
+<script setup lang="ts">
+
+</script>
+
 <template>
   <div class="fullscreen bg-blue text-white text-center q-pa-md flex flex-center">
     <div>
@@ -5,7 +9,10 @@
         404
       </div>
 
-      <div class="text-h2" style="opacity:.4">
+      <div
+        class="text-h2"
+        style="opacity:.4"
+      >
         Oops. Nothing here...
       </div>
 
@@ -21,7 +28,3 @@
     </div>
   </div>
 </template>
-
-<script setup lang="ts">
-
-</script>
