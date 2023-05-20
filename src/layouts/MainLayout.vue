@@ -1,4 +1,5 @@
-<script setup lang="ts">
+<script setup lang="ts" >
+
 </script>
 
 <template>
@@ -12,7 +13,6 @@
         <div>Quasar v{{ $q.version }}</div>
       </q-toolbar>
     </q-header>
-
     <q-page-container>
       <router-view />
     </q-page-container>

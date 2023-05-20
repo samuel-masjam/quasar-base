@@ -18,14 +18,15 @@
     "useDefineForClassFields": false,
     "strictPropertyInitialization": false,
     "moduleResolution": "node",
-    "vueCompilerOptions": {
-      "target": 3,
-      "plugins": [
-        "@vue-macros/volar/define-model"
-      ],
-      "defineModel": {
-        "unified": false
-      }
-    }
+    "typeRoots": ["./typings"],
+    // "vueCompilerOptions": {
+    //   "target": 3,
+    //   "plugins": [
+    //     "@vue-macros/volar/define-model"
+    //   ],
+    //   "defineModel": {
+    //     "unified": false
+    //   }
+    // }
   }
 }
